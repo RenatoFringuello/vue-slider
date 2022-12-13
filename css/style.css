@@ -15,6 +15,11 @@
     height: 600px;
     width: 80%;
 }
+.user-select-none{
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
 
 .item {
     float: left;

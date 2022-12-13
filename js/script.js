@@ -29,6 +29,7 @@ createApp({
         return{
             carouselSlides : slides,
             activeIndex : 0,
+            carouselIntervalId : this.startSlider()
         }
     },
     methods : {
@@ -40,6 +41,17 @@ createApp({
         },
         changeSlide(index){
             this.activeIndex = index;
+        },
+        stopSlider(){
+            console.log(this.carouselIntervalId, 'to clear');
+            clearInterval(this.carouselIntervalId);
+            console.log(this.carouselIntervalId, 'cleared');
+        },
+        startSlider(){
+            this.carouselIntervalId = setInterval(()=>{
+                this.nextSlide();
+            }, 3000);
+            console.log(this.carouselIntervalId, 'setted');
         }
     }
 }).mount('#app');
