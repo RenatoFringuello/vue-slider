@@ -5,10 +5,23 @@
 }
 
 .container {
+    position: relative;
+    width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+}
+
+.blurred-bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.2);
+    filter:blur(8px);
+    -webkit-filter:blur(8px);
 }
 
 .slider-wrapper{
@@ -23,7 +36,7 @@
 
 .item {
     float: left;
-    width: calc(100% - 200px);
+    width: 70%;
     height: 100%;
     position: relative;
 }
@@ -45,13 +58,13 @@
 .thumbs {
     float: left;
     height: 100%;
+    width: 20%;
     background: #000;
     position: relative;
 }
 
 .thumb {
     height: calc((100%) / 5);
-    width: 200px;
     opacity: 0.5;
     cursor: pointer;
 }
@@ -67,22 +80,25 @@
     opacity: 1;
 }
 
+.btns-container{
+    float: left;
+    width: 10%;
+    height: 100%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .prev, .next {
-    width: 20px;
-    height: 20px;
-    margin: 10px 0;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background: #ccc;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
     cursor: pointer;
-    z-index: 999;
+    margin-bottom: 50px;
 }
 
-.next {
-    bottom: 0;
-}
 
 /*
 EXTRA: in questo esempio gli accordion vengono creati
@@ -98,7 +114,7 @@ oppure i caratteri ∧ (&and;) e ∨ (&or;)
     border-right: 1px solid black;
     display: block;
     position: absolute;
-    top: 35%;
+    top: 37%;
     left: 50%;
     transform: translate(-50%) rotate(-45deg);
 }
@@ -111,7 +127,7 @@ oppure i caratteri ∧ (&and;) e ∨ (&or;)
     border-right: 1px solid black;
     display: block;
     position: absolute;
-    bottom: 35%;
+    bottom: 45%;
     left: 50%;
     transform: translate(-50%) rotate(135deg);
 }
